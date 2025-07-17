@@ -1,10 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import {
-  decrypt,
-  DecryptionError,
-  encrypt,
-  EncryptionError,
-} from '../src/index.js';
+import { decrypt, DecryptionError, encrypt, EncryptionError } from '../src/index.js';
 import {
   base64ToBuffer,
   bufferToBase64,
