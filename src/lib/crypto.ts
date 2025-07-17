@@ -19,7 +19,7 @@ export const generateSalt = (): ArrayBuffer => {
 
 export const deriveKey = async (
   password: string,
-  salt: ArrayBuffer,
+  salt: ArrayBuffer | Uint8Array,
   usages: KeyUsage[],
 ): Promise<CryptoKey> => {
   const importedKey = await crypto.subtle.importKey(
@@ -76,12 +76,13 @@ export const decrypt = async (
   salt: string,
 ): Promise<string> => {
   try {
-    const key = await deriveKey(password, base64ToBuffer(salt), ['decrypt']);
+    const saltBuffer = new Uint8Array(base64ToBuffer(salt));
+    const key = await deriveKey(password, saltBuffer, ['decrypt']);
 
     const decrypted = await crypto.subtle.decrypt(
-      { name: ALGORITHM, iv: base64ToBuffer(iv) },
+      { name: ALGORITHM, iv: new Uint8Array(base64ToBuffer(iv)) },
       key,
-      base64ToBuffer(encryptedData),
+      new Uint8Array(base64ToBuffer(encryptedData)),
     );
 
     return bufferToString(decrypted);

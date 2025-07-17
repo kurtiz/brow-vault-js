@@ -9,7 +9,16 @@ export const bufferToString = (buffer: ArrayBuffer): string => {
 
 // Base64 URL-safe encoding
 export const base64ToBuffer = (base64: string): ArrayBuffer => {
-  const binaryString = atob(base64.replace(/-/g, '+').replace(/_/g, '/'));
+  // Convert URL-safe base64 to standard base64
+  let standardBase64 = base64.replace(/-/g, '+').replace(/_/g, '/');
+
+  // Add padding if needed
+  const padding = standardBase64.length % 4;
+  if (padding) {
+    standardBase64 += '='.repeat(4 - padding);
+  }
+
+  const binaryString = atob(standardBase64);
   const bytes = new Uint8Array(binaryString.length);
 
   for (let i = 0; i < binaryString.length; i++) {
