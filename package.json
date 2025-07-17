@@ -28,7 +28,12 @@
     "frontend",
     "secure"
   ],
-  "author": "Aaron Will Djaba",
+  "author": {
+    "name": "Aaron Will Djaba",
+    "email": "aaronwilldjaba@outlook.com",
+    "github": "kurtiz",
+    "website": "https://aaronwilldjaba.vercel.app"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/kurtiz/brow-vault-js/issues"
