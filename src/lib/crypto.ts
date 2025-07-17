@@ -3,8 +3,8 @@ import {
   bufferToString,
   base64ToBuffer,
   bufferToBase64,
-} from './converters';
-import { EncryptionError, DecryptionError } from './errors';
+} from './converters.js';
+import { EncryptionError, DecryptionError } from './errors.js';
 
 // Configuration constants
 const ALGORITHM = 'AES-GCM';

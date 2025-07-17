@@ -1,2 +1,2 @@
-export { encrypt, decrypt } from './lib/crypto';
-export { EncryptionError, DecryptionError } from './lib/errors';
+export { encrypt, decrypt } from './lib/crypto.js';
+export { EncryptionError, DecryptionError } from './lib/errors.js';
