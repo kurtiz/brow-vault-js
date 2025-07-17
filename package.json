@@ -1,0 +1,37 @@
+{
+  "name": "brow-vault-js",
+  "version": "0.0.1",
+  "description": "A frontend cryptographic library for encrypting and decrypting data in the browser",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  },
+  "files": [
+    "dist"
+  ],
+  "browser": {
+    "crypto": false
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kurtiz/brow-vault-js.git"
+  },
+  "keywords": [
+    "crypto",
+    "encrypt",
+    "decrypt",
+    "frontend",
+    "secure"
+  ],
+  "author": "Aaron Will Djaba",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kurtiz/brow-vault-js/issues"
+  },
+  "homepage": "https://github.com/kurtiz/brow-vault-js#readme"
+}
